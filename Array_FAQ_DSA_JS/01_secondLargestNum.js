@@ -1,15 +1,10 @@
+// Solution one
 function secondLargest(arr){
-  const uniqueArr = Array.from(new Set(arr));
-  const sortedArr = uniqueArr.sort((a, b) => b - a);
-  return sortedArr[1];
-}
-
-function secondLargestOptimized(arr){
   let largest = Number.NEGATIVE_INFINITY;
   let secondLargest = Number.NEGATIVE_INFINITY;
-  // [12, 35, 1, 10, 34, 1]
-  // largest = 35
-  // secondLargest = 34
+  // [12, 3, 10, 35, 35]
+  //largest = 12
+  //second largest = Number.NEGATIVE_INFINITY
   for (let i = 0; i < arr.length; i++) {
     if(arr[i] > largest){
       secondLargest = largest;
@@ -20,7 +15,6 @@ function secondLargestOptimized(arr){
   }
   return secondLargest;
 }
-
-const result = secondLargestOptimized([12, 35, 1, 10, 34, 1])
+const result = secondLargest([10, 5, 10])
 console.log(result);
 
