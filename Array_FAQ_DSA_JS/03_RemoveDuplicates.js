@@ -1,18 +1,6 @@
-function removeDuplicate(arr){
-  let newArr = []; //O(n)
-  for (let i = 0; i < arr.length; i++) {
-      if(!newArr.includes(arr[i])){   //O(n^2)
-        newArr.push(arr[i]);
-      }
-  }
-  return newArr.length;
-};
-//Time Complexity: O(n^2)
-//Space Complexity: O(n)
-
 //Optimized
-function removeDuplicate1(arr){
-  for (let i = 0; i < arr.length - 1; i++) { //O(n)
+function removeDuplicate1(nums){
+  for (let i = 0; i < nums.length - 1; i++) { //O(n)
     if(nums[i] === nums[i + 1]){
       nums.splice(i + 1, 1); //O(1)
       i--
@@ -20,6 +8,7 @@ function removeDuplicate1(arr){
   }
   return nums.length;
 };
+
 //Time Complexity = O(n)
 //Space Complexity = O(1)
 // const nums = [0,0,1,1,2,3,3,4,4,5,]
@@ -29,17 +18,19 @@ function removeDuplicate1(arr){
 //Optimized Without JS Methods
 const removeDuplicatesOptimized = nums => {
   let i = 0;
-  for(let j = 1; j < nums.length; j++){
+  for (let j = 0; j < nums.length; j++) {
     if(nums[i] !== nums[j]){
-      i++
-      nums[i] = nums[j];
+      i++;
+      nums[i] = nums[j]
     }
   }
   return i + 1;
 }
 //Time Complexity = O(n)
 //Space Complexity = O(1)
-
+// explanation [0,1,2,3,4,5,3,4,4,5,]
+// i = 4
+// j = 9
 
 const nums = [0,0,1,1,2,3,3,4,4,5,]
 console.log(removeDuplicatesOptimized(nums));
