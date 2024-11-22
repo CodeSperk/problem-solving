@@ -38,7 +38,6 @@ function rotateArrOptimized(nums, k){
 // nums[start] = 19;
 //nums[end] = 1;
 
-
 function reverse(nums, start, end){
   while(start < end){
     const temp = nums[start];
@@ -46,8 +45,6 @@ function reverse(nums, start, end){
     nums[end--] = temp;
   }
 }
-
-
 
 
 console.log(rotateArrOptimized([1,9,3,4,19], 3));
