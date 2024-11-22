@@ -22,6 +22,24 @@ function removeDuplicate1(arr){
 };
 //Time Complexity = O(n)
 //Space Complexity = O(1)
+// const nums = [0,0,1,1,2,3,3,4,4,5,]
+// console.log(removeDuplicate1(nums));
+
+
+//Optimized Without JS Methods
+const removeDuplicatesOptimized = nums => {
+  let i = 0;
+  for(let j = 1; j < nums.length; j++){
+    if(nums[i] !== nums[j]){
+      i++
+      nums[i] = nums[j];
+    }
+  }
+  return i + 1;
+}
+//Time Complexity = O(n)
+//Space Complexity = O(1)
+
 
 const nums = [0,0,1,1,2,3,3,4,4,5,]
-console.log(removeDuplicate1(nums));
+console.log(removeDuplicatesOptimized(nums));
