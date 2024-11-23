@@ -1,28 +1,19 @@
-function goToLunch(person) {
-    if(person === 5) return true;
-    console.log(person);
-    return goToLunch(person + 1);  
+// Create an array with range of numbers
+// Input: start=1, end=5 ----->>> output: [1,2,3,4,5]
+
+function rangeOfNum(startNum, endNum) {
+  if(endNum < startNum) return [];
+  const numbers = rangeOfNum(startNum, endNum - 1);
+  // console.log(numbers);
+  numbers.push(endNum);
+  return numbers;
 }
+console.log(rangeOfNum(1,5));    
 
-// console.log("outcome:", goToLunch(1));
-
-// Loops vs recursion
-function multiply(arr) {
-  let product = 1;
-  for (let i = 0; i < arr.length; i++) {
-    product *=arr[i]    
-  }
-  return product;
-}
-// console.log(multiply([1,2,3,4]));
-
-function multArr(arr) {
-  console.log(arr);
-  if(arr.length <= 0) return 1;
-
-  return arr[arr.length - 1] * multArr(arr.slice(0, arr.length - 1))
-
-  //explanation
-  //4 * 3 * multArr([1,2]) ...
-}
-console.log(multArr([3,2,3,4]));
+// explanation: 
+//   rangeOfNum(1,5) => [1,2,3,4,5]
+//   rangeOfNum(1,4) => [1,2,3,4]
+//   rangeOfNum(1,3) => [1,2,3]
+//   rangeOfNum(1,2) => [1,2]
+//   rangeOfNum(1,1) => [1]
+//   rangeOfNum(1,0) => []
