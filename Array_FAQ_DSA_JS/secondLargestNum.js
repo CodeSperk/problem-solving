@@ -1,3 +1,11 @@
+// Question: Second Largest Number
+// Given an array of Arr size N, print second largest
+// distinct element from an array
+
+//Input: [12, 35, 1, 10, 34, 1] -- output: 34
+//Input: [10, 5, 10]            --  output: 5
+
+
 // Solution one
 function secondLargest(arr){
   let largest = Number.NEGATIVE_INFINITY;
