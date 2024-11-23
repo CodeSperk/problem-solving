@@ -21,11 +21,9 @@ function maxSubArray(nums){
     sum: maxSum,
     subArray: nums.slice(startIdx, endIdx + 1)
   } 
-}
-//Time Complexity:  O(n^2)
+  //Time Complexity:  O(n^2)
 //Space Complexity: O(1)
-
-
+}
 
 //Optimized using Kadane's Algorithms
 function maxSubArr(nums) {
@@ -41,9 +39,9 @@ function maxSubArr(nums) {
     }
   }
   return max;
-}
-//Time Complexity:  O(n)
+  //Time Complexity:  O(n)
 //Space Complexity: O(1)
+}
 
 const nums = [5,4,-1,7,8];
 console.log(maxSubArr(nums));
